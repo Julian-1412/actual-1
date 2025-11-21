@@ -1,0 +1,5 @@
+1 mango 
+2 piña 
+3 papaya 
+4 ciruela 
+5 sandia 
