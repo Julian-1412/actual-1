@@ -6,19 +6,19 @@
 #     Asegúrate de que el precio y la cantidad se conviertan correctamente a sus tipos numéricos usando float() e int().
 #     Si el usuario ingresa un valor inválido, muestra un mensaje y vuelve a pedirlo.
 
-nombre=input("Ingrese el nombre del producto: ") #variable que solicita al usuario el ingreso de el dato
-while  True: #ciclo que busca el cumplimiento de ciertas condiciones
+nombre=input("Ingrese el nombre del producto: ") 
+while  True: #with this cicle I'm looking for the user to put what I'm asking him 
   
-    try:    # verifica que los datos ingresados sean permitidos    
-        precio=float(input("Ingrese el precio: ")) #variable que busca el ingreso de un dato flotante
-        while True: #ciclo que busca que el dato ingresado cumpla con lo esperado 
-            try: #verifica que el dato ingresado sea un numero entero
+    try:    #] It verify that all data is correct
+        precio=float(input("Ingrese el precio: ")) #float value
+        while True: #with this cicle I'm looking for the user to put what I'm asking him 
+            try: #verify that the data entered is an integer
                 cantidad=int(input("Ingrese la cantidad: "))
-                break #finaliza el ciclo si se cumplio 
-            except ValueError: #atrapa el error en el dato de cantidad para arrojar el siguiente mensaje 
+                break #end the cycle if it is completed 
+            except ValueError: #Catch the error in the quantity data to display the following message 
                 print("Los datos son incorrectos")      
-        break #finaliza el ciclo si se cumplio
-    except ValueError: #atrapa el error en el dato de precio para arrojar el siguiente mensaje 
+        break #Finish the cicle if it is completed
+    except ValueError: #Catch the error in the price data to display the following message 
         print("Los datos son incorrectos")
 
 # Operación matemática (costo total):
@@ -27,8 +27,8 @@ while  True: #ciclo que busca el cumplimiento de ciertas condiciones
 #     Almacena en ella el resultado de multiplicar el precio por la cantidad (precio * cantidad).
 #     Asegúrate de que la operación se realice después de validar los datos de entrada.
 
-costo_total= precio*cantidad #se crea la variable que contiene la operacion que atrapa los datos solicitados al usuario
-print(f"El costo total es: {costo_total}")#imprime la operacion y entrega el resultado en consola
+costo_total= precio*cantidad #The variable containing the operation that captures the data requested from the user is created.
+print(f"El costo total es: {costo_total}")#print the opertion and show the result
 
 
 # Mostrar resultados en consola:
@@ -40,7 +40,7 @@ print(f"El costo total es: {costo_total}")#imprime la operacion y entrega el res
 #         Costo total calculado
 #     El formato del mensaje debe ser claro, por ejemplo: "Producto: Lápiz | Precio: 500 | Cantidad: 3 | Total: 1500"
 
-print(f"Producto: {nombre} | Precio: {precio} | Cantidad: {cantidad} | Total: {costo_total}") # resultado final que entrega en consola los datos ingresados por el usuario y su operacion
+print(f"Producto: {nombre} | Precio: {precio} | Cantidad: {cantidad} | Total: {costo_total}") # final result
 
 
 
