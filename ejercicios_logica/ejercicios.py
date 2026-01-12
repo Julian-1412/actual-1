@@ -45,7 +45,7 @@
 #     conversion= ((celsius*(9/5)+32))
 #     print(f"La temperatura ingresada en grados Celsius '{celsius}' pasa a grados Farenheit en: {conversion}")
 # except ValueError:
-#     print("Ingresa un valor numerico")    
+#     print("Ingresa un valor numerico")
 
 # 🟡 Nivel 2 – Condicionales y ciclos
 # 5️⃣ Tabla de multiplicar
@@ -134,7 +134,7 @@
 #     contador+=nota
 # promedio= contador/len(notas)
 # print(f"El promedio de notas de la lista es: {promedio:.2f}")
-#opcion numero dos mas simple 
+#opcion numero dos mas simple
 # notas=[4,5,3,2,4,5,5]
 # promedio= sum(notas)/len(notas)
 # print(f"El promedio de las notas de la lista es: {promedio:.2f}")
@@ -144,7 +144,7 @@
 # 🔟 Número mayor en un arreglo
 
 # Encuentra el número más grande de una lista.
- #opcion 1 mas sencilla
+#opcion 1 mas sencilla
 # lista=[200,22,60,78,961,521,1020,951]
 # print(max(lista))
 #opcion dos con ciclo for
@@ -154,7 +154,7 @@
 # for list in lista:
 #     if list > mayor:
 #         mayor=list
-# print(f"El numero mayor de la lista es: {mayor}") 
+# print(f"El numero mayor de la lista es: {mayor}")
 
 
 # 1️⃣1️⃣ Invertir un texto
@@ -164,7 +164,7 @@
 # Ejemplo:
 
 # hola → aloh
-#opcion 1 
+#opcion 1
 # palabra=input("Ingresa una palabra: ")
 # invertida=""
 # for i in palabra:
@@ -177,13 +177,28 @@
 #     invertida+= palabra[i]
 # print(invertida)
 #opcion 3 con slice
-palabra=input("Ingresa una palabra: ")
-palabra_invertida=palabra[::-1]
-print(palabra_invertida)
+# palabra=input("Ingresa una palabra: ")
+# palabra_invertida=palabra[::-1]
+# print(palabra_invertida)
 
 # 1️⃣2️⃣ Contar vocales
 
 # Cuenta cuántas vocales tiene una palabra.
+#opcion 1
+# palabras= input("Ingrese una palabra: ")
+# contador=0
+# for palabra in palabras:
+#     if palabra=="a" or palabra=="e" or palabra=="i" or palabra=="o" or palabra=="u":
+#         contador+=1
+# print(f"La palabra que ingresaste {palabras} contiene {contador} vocales")
+
+#opcion 2 teniendo en cuneta vocales que se ingresen en mayusculas con la funcion .lower()
+# palabras= input("Ingrese una palabra: ").lower()
+# contador=0
+# for palabra in palabras:
+#     if palabra in "aeiou":
+#         contador+=1
+# print(f"La palabra que ingresaste {palabras} contiene {contador} vocales")
 
 # 🔴 Nivel 4 – Retos lógicos
 # 1️⃣3️⃣ FizzBuzz
@@ -195,6 +210,28 @@ print(palabra_invertida)
 # Múltiplo de 5 → Buzz
 
 # Ambos → FizzBuzz
+#opcion uno tradicional
+# for i in range(1,101):
+#     if i%15==0:
+#         print("FizzBuzz")
+#     elif i%5==0:
+#         print("Buzz")
+#     elif i%3==0:
+#         print("Fizz")
+#     else:
+#         print(i)
+
+    
+#opcion 2 imprimiendo en la misma linea separando cada iteracion con una coma ","
+# for i in range(1,101):
+#     if i%15==0:
+#         print("FizzBuzz",end=",")
+#     elif i%5==0:
+#         print("Buzz", end=",")
+#     elif i%3==0:
+#         print("Fizz", end=",")
+#     else:
+#         print(i,end=",")
 
 # 1️⃣4️⃣ Número primo
 
@@ -209,3 +246,19 @@ print(palabra_invertida)
 # Retiro
 
 # Validar si hay fondos suficientes
+saldo= 1000000
+while True:
+    try:
+        retiro=int(input("Ingrese el monto que desea retirar: "))
+        if retiro <=0:
+            print("No puedes retirar un monto inexistente")
+        elif retiro > saldo:
+            print(f"No hay fondos suficientes, fondos actuales: {saldo}")
+        else:
+            saldo-=retiro
+            print(f"Retiraste: ${retiro} y el saldo actual es: ${saldo}")
+            if saldo==0:
+                print("Se acabaron los fondos, hasta luego")
+                break
+    except ValueError:
+        print("Ingresaste un caracter invalido")
